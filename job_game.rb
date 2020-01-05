@@ -41,8 +41,10 @@ class JobGame < Gosu::Window
         end
         draw_quad(0,0,screen,800,0,screen,800,600,screen,0,600,screen)
         @hit = 0
+        @font.draw("Score:",570,50,2)
         @font.draw(@score.to_s,650,50,2)
-        @font.draw(@time_left.to_s,50,50,2)
+        @font.draw("Time:",50,50,2)
+        @font.draw(@time_left.to_s,120,50,2)
         unless @playing 
             if @score < 1
             @font.draw("KEEP SEARCHING!",300,300,3)

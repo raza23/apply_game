@@ -5,4 +5,4 @@ run 'gem install gosu'
 run 'ruby job_game.rb'
 
 Directions:
-Move your cursor to hit the 'help wanted' sign as it moves and dissapears/appears through the gameplay. 
+Move your cursor to hit the 'help wanted' sign as it moves and dissapears/appears through the gameplay.
