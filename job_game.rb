@@ -5,6 +5,7 @@ class JobGame < Gosu::Window
         super(800,600)
         self.caption = "Apply Apply Apply"
         @image = Gosu::Image.new('images/helpwanted.png')
+        @cursor = Gosu::Image.new('images/resume.png')
         @x = 200
         @y = 200
 
@@ -15,17 +16,24 @@ class JobGame < Gosu::Window
 
         @velocity_x = 5
         @velocity_y = 5 
+        @visible = 0
     end
 
     def draw 
-        @image.draw(@x-@width/2,@y-@height/2,1)
+        if @visible > 0 
+            @image.draw(@x-@width/2,@y-@height/2,1)
+        end
+
+        @cursor.draw(mouse_x - 50 ,mouse_y - 54,1)
     end
 
     def update
         @x += @velocity_x
         @y += @velocity_y
         @velocity_x *= -1 if @x + @width / 2 > 800 || @x - @width /2 < 0
-        @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height /2  < 0   
+        @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height /2  < 0  
+        @visible -= 1
+        @visible = 50 if @visible < -1 && rand < 0.01 
 
     end
 
