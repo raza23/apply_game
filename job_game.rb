@@ -3,16 +3,16 @@ require 'gosu'
 class ViewsGame < Gosu::Window
     def initialize 
         super(800,600)
-        self.caption = "Apply Apply Apply"
+        self.caption = "Views"
         # @image = Gosu::Image.new('images/helpwanted.png')
-        @image = Gosu::Image.new('images/nash2.png')
+        @image = Gosu::Image.new('images/nash3.png')
 
-        @x = 410
-        @y = 500
+        @x = 200
+        @y = 300
         
         ## image size
-        @width = 194
-        @height = 279
+        @width = 100
+        @height = 144
         
         
         @velocity_x = 2
@@ -21,7 +21,7 @@ class ViewsGame < Gosu::Window
         # @cursor = Gosu::Image.new('images/resume.png')
         @cursor = Gosu::Image.new('images/dobrik1.png')
 
-        @celebrate = Gosu::Image.new('images/hired.png')
+        # @celebrate = Gosu::Image.new('images/hired.png')
         @hit = 0
         @font = Gosu::Font.new(30)
         @score = 0
@@ -51,14 +51,14 @@ class ViewsGame < Gosu::Window
         @font.draw(@time_left.to_s,120,50,2)
         unless @playing 
             if @score < 1
-            @font.draw("KEEP SEARCHING!",300,300,3)
+            @font.draw("KEEP SHOOTING",300,300,3)
             @font.draw("Press SpaceBar to Replay",300,500,3)
             @visible =20
             else 
-                @font.draw("HIRED!!!!",300,300,3)
+                @font.draw("HAHAHA",300,300,3)
                 @font.draw("Press SpaceBar to Replay",300,500,3)
                 @visible=20
-                @celebrate.draw(mouse_x - 150 ,mouse_y - 150,1)
+                # @celebrate.draw(mouse_x - 150 ,mouse_y - 150,1)
                 screen = Gosu::Color::BLUE
                 draw_quad(0,0,screen,800,0,screen,800,600,screen,0,600,screen)
             end
@@ -82,7 +82,7 @@ class ViewsGame < Gosu::Window
     def button_down(id)
         if @playing 
             if (id == Gosu::MsLeft)
-              if Gosu.distance(mouse_x,mouse_y,@x,@y) < 50 && @visible >=0 
+              if Gosu.distance(mouse_x,mouse_y,@x,@y) < 100 && @visible >=0 
                  @hit = 1
                  @score +=10
              else
