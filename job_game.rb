@@ -4,19 +4,23 @@ class JobGame < Gosu::Window
     def initialize 
         super(800,600)
         self.caption = "Apply Apply Apply"
-        @image = Gosu::Image.new('images/helpwanted.png')
-        @x = 200
-        @y = 200
+        # @image = Gosu::Image.new('images/helpwanted.png')
+        @image = Gosu::Image.new('images/nash1.png')
+
+        @x = 410
+        @y = 500
         
         ## image size
-        @width = 100
-        @height = 100
+        @width = 400
+        @height = 453
         
         
         @velocity_x = 2
         @velocity_y = 2
         @visible = 0
-        @cursor = Gosu::Image.new('images/resume.png')
+        # @cursor = Gosu::Image.new('images/resume.png')
+        @cursor = Gosu::Image.new('images/dobrik1.png')
+
         @celebrate = Gosu::Image.new('images/hired.png')
         @hit = 0
         @font = Gosu::Font.new(30)
@@ -30,7 +34,7 @@ class JobGame < Gosu::Window
             @image.draw(@x-@width/2,@y-@height/2,1)
         end
 
-        @cursor.draw(mouse_x - 50 ,mouse_y - 54,1)
+        @cursor.draw(mouse_x - 200 ,mouse_y - 228,1)
 
         if @hit == 0
             screen = Gosu::Color::NONE
@@ -69,7 +73,7 @@ class JobGame < Gosu::Window
             @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height /2  < 0  
             @visible -= 1
             @visible = 50 if @visible < -1 && rand < 0.01 
-            @time_left = (6 - ((Gosu.milliseconds-@start_time)/1000))
+            @time_left = (30 - ((Gosu.milliseconds-@start_time)/1000))
             @playing = false if @time_left < 1
         end
 
