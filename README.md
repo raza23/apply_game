@@ -1,8 +1,8 @@
-Simple game representing the Job Search Hustle
+Simple game representing a typical David Dobrik Vlog
 
-To Run: 
-run 'gem install gosu' 
-run 'ruby job_game.rb'
+To Run:
+run 'gem install gosu'
+run 'ruby views.rb'
 
 Directions:
-Move your cursor to hit the 'help wanted' sign as it moves and dissapears/appears through the gameplay.
+Move your cursor to hit the 'Jason Nash' as he moves and disapears/appears through the gameplay.
