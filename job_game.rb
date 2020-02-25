@@ -1,18 +1,18 @@
 require 'gosu'
 
-class JobGame < Gosu::Window
+class ViewsGame < Gosu::Window
     def initialize 
         super(800,600)
         self.caption = "Apply Apply Apply"
         # @image = Gosu::Image.new('images/helpwanted.png')
-        @image = Gosu::Image.new('images/nash1.png')
+        @image = Gosu::Image.new('images/nash2.png')
 
         @x = 410
         @y = 500
         
         ## image size
-        @width = 400
-        @height = 453
+        @width = 194
+        @height = 279
         
         
         @velocity_x = 2
@@ -104,5 +104,5 @@ end
 
 end
 
-window = JobGame.new
+window = ViewsGame.new
 window.show
