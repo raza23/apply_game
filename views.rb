@@ -21,7 +21,7 @@ class ViewsGame < Gosu::Window
         # @cursor = Gosu::Image.new('images/resume.png')
         @cursor = Gosu::Image.new('images/dobrik1.png')
 
-        # @celebrate = Gosu::Image.new('images/hired.png')
+        @celebrate = Gosu::Image.new('images/tesla.png')
         @hit = 0
         @font = Gosu::Font.new(30)
         @score = 0
@@ -55,10 +55,10 @@ class ViewsGame < Gosu::Window
             @font.draw("Press SpaceBar to Replay",300,500,3)
             @visible =20
             else 
-                @font.draw("HAHAHA",300,300,3)
+                @font.draw("YOU GOT A CAR!",300,300,3)
                 @font.draw("Press SpaceBar to Replay",300,500,3)
                 @visible=20
-                # @celebrate.draw(mouse_x - 150 ,mouse_y - 150,1)
+                @celebrate.draw(mouse_x - 150 ,mouse_y - 150,1)
                 screen = Gosu::Color::BLUE
                 draw_quad(0,0,screen,800,0,screen,800,600,screen,0,600,screen)
             end
